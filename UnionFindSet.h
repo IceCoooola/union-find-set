@@ -39,10 +39,16 @@ public:
         int root2 = FindRoot(x2);
         return root1 == root2? true : false;
     }
-    //how many element in the set
+    //how many trees in the set
     size_t SetSize()
     {
-            return _ufs.size();
+        int x = 0;
+        for(auto e : _ufs)
+        {
+            if (e < 0)
+                ++x;
+        }
+            return x;
     }
     
 private:
